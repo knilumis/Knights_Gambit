@@ -1,0 +1,149 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+    overflow: hidden;
+}
+
+#game-container, #menu-container {
+    width: 600px;
+    height: 450px;
+    border: 2px solid #000;
+    background-image: url('/Users/macbook/Documents/Knights_Gambit/brown_one.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+}
+
+#game-container {
+    display: none; /* Oyun başlangıçta gizlenecek */
+}
+
+#menu-container {
+    display: flex; /* Menü başlangıçta görünecek */
+}
+
+.health-bar-container {
+    width: 120px;
+    height: 20px;
+    background-color: #ccc;
+    border: 1px solid #000;
+    position: relative;
+    margin-bottom: 5px;
+    transition: border 0.3s ease; /* Geçiş animasyonu */
+}
+
+.defense-active {
+    border: 2px solid blue; /* Savunma aktifken mavi çerçeve */
+}
+
+.health-bar {
+    height: 100%;
+    background-color: red;
+    width: 100%;
+    position: absolute;
+}
+
+#health-bars {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 5px; /* Üstteki boşluğu biraz azaltalım */
+    margin-bottom: 10px; /* Alt tarafa da biraz boşluk ekleyelim */
+    position: relative;
+    top: -20px; /* HP barları biraz yukarıya kaydırıldı */
+}
+
+.player-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#player-stats, #enemy-stats {
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+#battlefield {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 150px; /* Yüksekliği artırarak oyuncuların alanını genişletiriz */
+    width: 100%;
+    position: relative;
+    margin-top: 20px; /* Üstte boşluk bırakırız */
+}
+
+.character {
+    width: 50px;
+    height: 100px;
+    position: relative;
+}
+
+#player {
+    background-color: blue;
+}
+
+#enemy {
+    background-color: red;
+}
+
+.damage-indicator, .defense-indicator {
+    position: absolute;
+    font-size: 16px;
+    font-weight: bold;
+    animation: fadeOut 2s forwards;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+
+#skills {
+    display: flex;
+    justify-content: space-around;
+    width: 100%; /* Skillerin genişliğini tam yapıyoruz */
+    margin-top: 20px; /* Skiller ve savaş alanı arasına boşluk ekleriz */
+}
+
+.skill-button {
+    padding: 10px;
+    border: 2px solid #000;
+    cursor: pointer;
+}
+
+#timer, #turn-indicator, #action-log {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#action-log {
+    height: 40px;
+    overflow: hidden;
+}
+
+#menu-container input, #menu-container button {
+    margin: 10px;
+    padding: 10px;
+    font-size: 18px;
+}
